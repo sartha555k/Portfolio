@@ -1,4 +1,4 @@
-import { motion , spring } from "framer-motion";
+import { motion, spring } from "framer-motion";
 import { a } from "framer-motion/client";
 import { useState } from "react";
 import { FiGithub, FiLinkedin, FiCode, FiMenu, FiX } from "react-icons/fi";
