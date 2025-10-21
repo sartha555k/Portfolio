@@ -1,11 +1,16 @@
-import { motion, spring } from "framer-motion";
-import { a } from "framer-motion/client";
+import { motion, spring, AnimatePresence } from "framer-motion";
+import { a, div } from "framer-motion/client";
 import { useState } from "react";
 import { FiGithub, FiLinkedin, FiCode, FiMenu, FiX } from "react-icons/fi";
 
 const Header = () => {
   const [isopen, setIsopen] = useState(false);
   const toggle = () => setIsopen(!isopen);
+
+  const [contectFormOpen, setContactFormOpen] = useState(false);
+  const openContactForm = () => setContactFormOpen(true);
+  const closeContactForm = () => setContactFormOpen(false);
+
   return (
     <header className="absolute w-full z-50 transition-all duration-300 ">
       <div
@@ -116,6 +121,7 @@ const Header = () => {
 
           {/* hire me button */}
           <motion.button
+            onClick={openContactForm}
             initial={{ opacity: 0, scale: 0.1 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -197,6 +203,107 @@ const Header = () => {
           Contect Me
         </button>
       </motion.div>
+      <AnimatePresence>
+        {/* contact-form  */}
+
+        {contectFormOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="fixed inset-0 bg-black/50 background-blur-sm z-50 flex 
+        items-center justify-center p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0, y: 30 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 30 }}
+              transition={{
+                type: "spring",
+                damping: 32,
+                stiffness: 200,
+                duration: 1,
+              }}
+              className="bg-white dark:bg-gray-800 rounded-lg 
+          shadow-xl w-full max-w-md p-6"
+            >
+              <div className="flex justify-between items-center mb-4">
+                <h1 className="text-2xl font-extrabold text-gray-300">
+                  Get In Touch
+                </h1>
+                <button>
+                  <FiX onClick={closeContactForm}></FiX>
+                </button>
+              </div>
+              <form className="space-y-4">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block
+                 text-sm font-medium text-gray-300 mb-1"
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    className="w-full px-4 py-2 border border-gray-600 
+                 rounded-lg focus:ring-2 focus:ring-violet-500 
+                 focus:border-violet-500 bg-gray-700"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block
+                 text-sm font-medium text-gray-300 mb-1"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    className="w-full px-4 py-2 border border-gray-600 
+                 rounded-lg focus:ring-2 focus:ring-violet-500 
+                 focus:border-violet-500 bg-gray-700"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block
+                 text-sm font-medium text-gray-300 mb-1"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    rows={4}
+                    placeholder="How can we help you ?"
+                    className="w-full px-4 py-2 border border-gray-600 
+                 rounded-lg focus:ring-2 focus:ring-violet-500 
+                 focus:border-violet-500 bg-gray-700"
+                  />
+                </div>
+                <motion.button
+                  whileHover={{ scale: 1.07 }}
+                  whileTap={{ scale: 0.97 }}
+                  type="submit"
+                  className="w-full px-4 py-2 bg-gradient-to-r 
+              from-violet-900 to-violet-500 rounded-lg 
+              hover:from-violet-500 hover:to-violet-500
+              shadow-md hover:shadow-lg hover:shadow-violet-500/50"
+                >
+                  Send Message
+                </motion.button>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
