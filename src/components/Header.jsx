@@ -1,5 +1,5 @@
-import { motion, spring, AnimatePresence } from "framer-motion";
-import { a, div } from "framer-motion/client";
+import { motion, AnimatePresence } from "framer-motion";
+
 import { useState } from "react";
 import { FiGithub, FiLinkedin, FiCode, FiMenu, FiX } from "react-icons/fi";
 
@@ -133,7 +133,7 @@ const Header = () => {
             }}
             className="ml-4 px-4 py-4 rounded-lg 
         bg-gradient-to-r from-black to-gray-500 font-bold
-        hover:from-violet-700 hover:to-violet-200 hover:text-black
+        hover:from-violet-950 hover:to-violet-500 hover:text-black
         transition-all duration-500"
           >
             Hire Me !
@@ -196,7 +196,9 @@ const Header = () => {
         </div>
 
         <button
-          onClick={() => toggle()}
+          onClick={() => {toggle()
+            openContactForm()
+          }}
           className="mt-4 block w-full px-4 py-2 rounded-lg 
         bg-gradient-to-r from via-violet-800 to-violet-500 font-bold cursor-pointer"
         >
