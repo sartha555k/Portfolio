@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Spline from "@splinetool/react-spline";
 const HeroSection = () => {
   return (
     <section
@@ -6,7 +7,7 @@ const HeroSection = () => {
      flex xl:flex-row flex-col-reverse items-center justify-between
      lg:px-24 px-10 relative overflow-hidden"
     >
-      <div>
+      <div className="z-40 xl:mb-0 mb-[20%]">
         <motion.h1
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
@@ -20,7 +21,7 @@ const HeroSection = () => {
           className="text-5xl md:text-7xl 
             lg:text-8xl font-bold z-10 mb-6"
         >
-          Lorem ipsum dolor <br /> sit amet.
+          Lorem ipsum <br /> sit amet.
         </motion.h1>
 
         <motion.p
@@ -39,9 +40,10 @@ const HeroSection = () => {
           adipisicing elit. Tenetur, debitis est, excepturi sint asperiores{" "}
           <br />
           maiores corporis, quam explicabo quidem fugiat dolores officia eaque
-          vero quasi?
+          vero ?
         </motion.p>
       </div>
+      <Spline className="absolute xl:right-[-28%] right-0 top-[-20%] lg:top-0" scene="https://prod.spline.design/Y90yMxaQJpq2QvVB/scene.splinecode" />
     </section>
   );
 };
