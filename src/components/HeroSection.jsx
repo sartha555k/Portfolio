@@ -21,7 +21,8 @@ const HeroSection = () => {
           className="text-5xl md:text-7xl 
             lg:text-8xl font-bold z-10 mb-6"
         >
-          Lorem ipsum <br /> sit amet.
+          Changing the world
+          <br /> with code.
         </motion.h1>
 
         <motion.p
@@ -34,16 +35,16 @@ const HeroSection = () => {
             delay: 1.8,
             duration: 1.5,
           }}
-          className="text-xl md:text-1xl lg:text-2xl text-gray-400"
+          className="text-xl md:text-1xl lg:text-2xl text-gray-400 font-bold"
         >
-          Lorem ipsum dolor sit amet consectetur, <br />
-          adipisicing elit. Tenetur, debitis est, excepturi sint asperiores{" "}
-          <br />
-          maiores corporis, quam explicabo quidem fugiat dolores officia eaque
-          vero ?
+          Creating more than just products, building impact. <br />
+          Because technology should move the world forward.
         </motion.p>
       </div>
-      <Spline className="absolute xl:right-[-28%] right-0 top-[-20%] lg:top-0" scene="https://prod.spline.design/Y90yMxaQJpq2QvVB/scene.splinecode" />
+      <Spline
+        className="absolute xl:right-[-28%] right-0 top-[-20%] lg:top-0"
+        scene="https://prod.spline.design/Y90yMxaQJpq2QvVB/scene.splinecode"
+      />
     </section>
   );
 };
