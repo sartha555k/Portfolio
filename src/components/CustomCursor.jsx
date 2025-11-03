@@ -49,7 +49,7 @@ const CustomCursor = () => {
 
     document.addEventListener("mousedown", () => {
       gsap.to([cursor, cursorBorder], {
-        scale: 0.4,
+        scale: 0.6,
         duration: 0.4,
       });
     });
