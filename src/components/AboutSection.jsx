@@ -50,7 +50,7 @@ const AboutSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="h-screen relative overflow-hidden bg-gradient-to-b from-gray-600 to-black"
+      className="h-screen relative overflow-hidden bg-gradient-to-b from-gray-600 to-black mb-[10%]"
     >
       <div className="container mx-auto px-4 h-full flex flex-col items-center justify-center">
         <h1
