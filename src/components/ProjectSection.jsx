@@ -10,24 +10,18 @@ import { SlShareAlt } from "react-icons/sl";
 const projectImage = [
   {
     id: 1,
-    title: "Project 1",
+    title: "Dev-Tinder",
     imageSrc: "/images/project-5.png",
   },
   {
     id: 2,
-    title: "Project 2",
+    title: "Ink.AI",
     imageSrc: "/images/project-6.png",
   },
   {
     id: 3,
-    title: "Project 3",
+    title: "Urban-Miles",
     imageSrc: "/images/project-7.png",
-  },
-  {
-
-    id: 4,
-    title: "Project 4",
-    imageSrc: "/images/project-1.png",
   }
 ];
 
