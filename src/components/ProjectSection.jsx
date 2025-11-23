@@ -11,23 +11,24 @@ const projectImage = [
   {
     id: 1,
     title: "Project 1",
-    imageSrc: "/images/project-1.png",
+    imageSrc: "/images/project-5.png",
   },
   {
     id: 2,
     title: "Project 2",
-    imageSrc: "/images/project-2.png",
+    imageSrc: "/images/project-6.png",
   },
   {
     id: 3,
     title: "Project 3",
-    imageSrc: "/images/project-3.png",
+    imageSrc: "/images/project-7.png",
   },
   {
+
     id: 4,
     title: "Project 4",
-    imageSrc: "/images/project-4.png",
-  },
+    imageSrc: "/images/project-1.png",
+  }
 ];
 
 const ProjectSection = () => {
@@ -136,7 +137,7 @@ const ProjectSection = () => {
 
     //Image animation
     const panels = gsap.utils.toArray(".panel");
-    panels.forEach((panel,) => {
+    panels.forEach((panel) => {
       const image = panel.querySelector(".project-image");
       const imageTitle = panel.querySelector(".project-title");
 
@@ -161,61 +162,63 @@ const ProjectSection = () => {
         tl.fromTo(imageTitle, { y: 30 }, { y: -100, duration: 0.3 }, 0.2);
       }
     });
-  },[]);
+  }, []);
   return (
-    <section
-      ref={sectionRef}
-      id="horizontal-scrolling"
-      className="relative py-20 bg-gradient-to-b from-black to-pink-700 overflow-hidden"
-    >
-      <div className="container mx-auto px-4 mb-16 relative z-10 ">
-        <h2
-          ref={titleRef}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-300 
+    <div id="projects">
+      <section
+        ref={sectionRef}
+        id="horizontal-scrolling"
+        className="relative py-20 bg-gradient-to-b from-black to-pink-700 overflow-hidden"
+      >
+        <div className="container mx-auto px-4 mb-16 relative z-10 ">
+          <h2
+            ref={titleRef}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-300 
             text-center mb-4 opacity-0"
-        >
-          Featured Projects
-        </h2>
-        <div
-          ref={titleLineRef}
-          className="w-0 h-1 bg-pink-500 mx-auto opacity-0"
-        ></div>
-      </div>
-      {/* // horizontal-scroll-area */}
-      <div ref={triggerRef} className="overflow-hidden opacity-0">
-        <div
-          ref={horizontalRef}
-          className="horizontal-section flex md:w-[400%] w-[420%] "
-        >
-          {projectImage.map((project) => (
-            <div
-              //   Loading
-              key={project.id}
-              className="panel relative flex items-center 
-                justify-center "
-            >
-              <div
-                className="relative w-full h-full flex flex-col items-center justify-center
-                    p-4 sm:p-8 md:p-12 "
-              >
-                <img
-                  className="project-image max-w-full max-h-full rounded-2xl object-cover"
-                  src={project.imageSrc}
-                  alt="Project-img"
-                />
-                <h2
-                  className="project-title flex items-center gap-3 md:text-3xl 
-                text-sm md:font-bold text-black mt-6 z-50 text-nowrap hover:text-gray-400
-                transition-colors duration-300 cursor-pointer "
-                >
-                  {project.title} <SlShareAlt />
-                </h2>
-              </div>
-            </div>
-          ))}
+          >
+            Featured Projects
+          </h2>
+          <div
+            ref={titleLineRef}
+            className="w-0 h-1 bg-pink-500 mx-auto opacity-0"
+          ></div>
         </div>
-      </div>
-    </section>
+        {/* // horizontal-scroll-area */}
+        <div ref={triggerRef} className="overflow-hidden opacity-0">
+          <div
+            ref={horizontalRef}
+            className="horizontal-section flex md:w-[400%] w-[420%] "
+          >
+            {projectImage.map((project) => (
+              <div
+                //   Loading
+                key={project.id}
+                className="panel relative flex items-center 
+                justify-center "
+              >
+                <div
+                  className="relative w-full h-full flex flex-col items-center justify-center
+                    p-4 sm:p-8 md:p-12 "
+                >
+                  <img
+                    className="project-image max-w-full max-h-full rounded-2xl object-cover"
+                    src={project.imageSrc}
+                    alt="Project-img"
+                  />
+                  <h2
+                    className="project-title flex items-center gap-3 md:text-3xl 
+                text-sm md:font-bold text-white mt-6 z-50 text-nowrap hover:text-gray-400
+                transition-colors duration-300 cursor-pointer "
+                  >
+                    {project.title} <SlShareAlt />
+                  </h2>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 

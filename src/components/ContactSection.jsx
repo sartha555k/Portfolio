@@ -120,8 +120,8 @@ const ContactSection = () => {
         items-center justify-center opacity"
         >
           <h1
-            className="text-black md:w-[10rem] w-[20rem] lg:scale-[0.4] sm:scale-[0.25]
-            sclae-[0.07] md:font-bold text-sm sm:text-base leading-none mb-5"
+            className="text-black md:w-[10rem] w-[20rem] lg:scale-[0.4] sm:scale-[0.25] scale-[0.07]
+            sclae-[0.07] md:font-bold text-sm sm:text-sm leading-none mb-5"
           >
             Let's Connect !
           </h1>
@@ -129,19 +129,21 @@ const ContactSection = () => {
             className="text-black lg:w-[40rem] w-[20rem] absolute
           sm:mt-3 mt-1 md:scale-[0.1] scale-[0.068] "
           >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
-            accusamus error quo autem corrupti ratione quasi a deserunt ea?
-            Molestiae odit impedit laborum rem minus deleniti, maxime asperiores
-            in quod modi! Numquam provident hic cumque error perferendis
-            delectus officiis harum omnis. Asperiores soluta alias nostrum
-            ducimus commodi quas, sequi ipsa!
+            I'm always open to meaningful conversations, collaboration
+            opportunities, and exciting projects. Whether you want to discuss an
+            idea, need technical support, or are exploring potential
+            partnerships, feel free to reach out. I value clear communication,
+            professionalism, and growth-focused interactions, so let's connect
+            and create something impactful together.
           </p>
-          <button
+          <a
             className="px-10 py-2 rounded-xl bg-black hover:bg-white hover:text-black
           transition-all duration-500 scale-[0.1] absolute sm:mt-9 mt-7 text-nowrap"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=sarthak.code30@gmail.com"
+            target="_blank"
           >
-            Contact Me
-          </button>
+            <button className="">Contact Me</button>
+          </a>
         </div>
       </div>
     </section>

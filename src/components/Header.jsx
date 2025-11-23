@@ -49,9 +49,18 @@ const Header = () => {
         <nav className="lg:flex hidden space-x-8">
           {["Home", "About", "Projects", "Experience", "Contact"].map(
             (item, index) => {
+              const id = item.toLowerCase();
               return (
                 <motion.a
                   key={item}
+                  href={`#${id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const section = document.getElementById(id);
+                    if (section) {
+                      section.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
@@ -63,7 +72,6 @@ const Header = () => {
                   className="relative text-gray-800 dark:text-gray-200 
               hover: via-violet-400 dark:hover:text-violet-400 font-medium
               transition-colors duration-300 group"
-                  href="#"
                 >
                   {item}
                   <span
@@ -86,7 +94,9 @@ const Header = () => {
             }}
             className="h-5 w-5 text-gray-800 dark:text-gray-200 hover:text-purple-400
              dark:hover:text-purple-400 transition-colors duration-300"
-            href="#"
+            href="https://github.com/sartha555k"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FiGithub />
           </motion.a>
@@ -169,21 +179,35 @@ const Header = () => {
       >
         <nav className="flex flex-col space-y-3">
           {["Home", "About", "Projects", "Experience", "Contact"].map(
-            (item) => (
-              <a
-                onClick={toggle}
-                className="dark:text-gray-300 text-gray-800 font-medium"
-                key={item}
-                href="#"
-              >
-                {item}
-              </a>
-            )
+            (item) => {
+              const id = item.toLowerCase();
+              return (
+                <a
+                  key={item}
+                  href={`#${id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const section = document.getElementById(id);
+                    if (section) {
+                      section.scrollIntoView({ behavior: "smooth" });
+                    }
+                    toggle();
+                  }}
+                  className="dark:text-gray-300 text-gray-800 font-medium"
+                >
+                  {item}
+                </a>
+              );
+            }
           )}
         </nav>
         <div className="pt-4 border-t border-gray-500 dark:border-gray-400">
           <div className="flex space-x-5">
-            <a href="#">
+            <a
+              href="https://github.com/sartha555k"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FiGithub className="h-5 w-5 text-gray-800 dark:text-gray-300" />
             </a>
             <a href="#">
@@ -196,8 +220,9 @@ const Header = () => {
         </div>
 
         <button
-          onClick={() => {toggle()
-            openContactForm()
+          onClick={() => {
+            toggle();
+            openContactForm();
           }}
           className="mt-4 block w-full px-4 py-2 rounded-lg 
         bg-gradient-to-r from via-violet-800 to-violet-500 font-bold cursor-pointer"
